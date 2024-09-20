@@ -1,0 +1,74 @@
+/* MENU E BACKGROUND */
+
+html{
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(rgb(16, 16, 16, 0.5), rgb(25, 25, 25, 0.5)), url(../assets/background-image.jpg);
+    background-position: center center;
+     /* background-size: cover; */
+     /* background-repeat: no-repeat */
+    background-position-y: 0px;
+}
+.menu-navigation{
+    display: flex;
+    text-decoration: none;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1e3f68;
+    height: 5vw;
+}
+.menu-navigation img{
+    width: 60px;
+    height: 60px;
+}
+.menu-navigation li{
+    display: inline;
+    padding: 20px;
+    position: relative;
+}
+.menu-navigation a{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+.menu-navigation a::before{
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 0px;
+    height: 2px;
+    background-color: rgb(250, 0, 0);
+    transition: all 1s ease;
+}
+.menu-navigation a:hover:before{
+    width: 100%;
+    background-color: #ff2600;
+}
+
+
+/* MAIN */
+.main-content{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+}
+.main-card-tabela{
+    width: 500px;
+    height: 500px;
+    background-color: beige;
+}
+.main-card-noticia{
+    width: 500px;
+    height: 500px;
+    background-color: beige;
+}
+.main-card-next{
+    width: 500px;
+    height: 500px;
+    background-color: beige;
+}
