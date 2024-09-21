@@ -11,7 +11,8 @@ fetch(url)
         // Exibe os dados formatados como texto
         const tbody = document.querySelector('#tabela tbody');
         const dados = data.standings[0].rows
-        dados.forEach(function(nome) {
+        console.log(data)
+        dados.forEach(function(brasileirao) {
 
             const tr = document.createElement('tr'); // Cria uma nova linha
             const tdPosition = document.createElement('td'); // Cria uma nova célula
@@ -21,12 +22,33 @@ fetch(url)
             const tdDraws = document.createElement('td'); // Cria uma nova célula
             const tdLosses = document.createElement('td'); // Cria uma nova célula
 
-            tdPosition.textContent = nome.position; // Define o texto da célula
-            tdTeam.textContent = nome.team.name; // Define o texto da célula
-            tdPts.textContent = nome.points; // Define o texto da célula
-            tdVit.textContent = nome.wins; // Define o texto da célula
-            tdDraws.textContent = nome.draws; // Define o texto da célula
-            tdLosses.textContent = nome.losses; // Define o texto da célula
+            // Define a cor de fundo da pocissao caso o time esteja no G4
+            if(brasileirao.position >= 0 && brasileirao.position <= 4)
+            {
+                tdPosition.style.backgroundColor = '#06AA48';
+                tdPosition.textContent = brasileirao.position;
+            }
+            else
+            {
+                tdPosition.textContent = brasileirao.position;
+            }
+
+            if(brasileirao.position >= 5 && brasileirao.position <= 6)
+            {
+                tdPosition.style.backgroundColor = '#1387F7';
+                tdPosition.textContent = brasileirao.position;
+            }
+            else
+            {
+                tdPosition.textContent = brasileirao.position;
+            }
+
+            tdTeam.innerHTML = `<img style="margin-right: 100%;" src="https://api.sofascore.app/api/v1/team/${brasileirao.team.id}/image">` + `${brasileirao.team.name}`
+            tdPts.textContent = brasileirao.points; // Define o texto da célula
+            tdVit.textContent = brasileirao.wins; // Define o texto da célula
+            tdDraws.textContent = brasileirao.draws; // Define o texto da célula
+            tdLosses.textContent = brasileirao.losses; // Define o texto da célula
+
 
             tr.appendChild(tdPosition); // Adiciona a célula à linha
             tr.appendChild(tdTeam); // Adiciona a célula à linha
@@ -35,7 +57,7 @@ fetch(url)
             tr.appendChild(tdDraws); // Adiciona a célula à linha
             tr.appendChild(tdLosses); // Adiciona a célula à linha
             tbody.appendChild(tr); // Adiciona a linha ao corpo da tabela
-            console.log(nome)
+            console.log(brasileirao)
           });
     })
     .catch(error => {
