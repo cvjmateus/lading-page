@@ -11,7 +11,6 @@ fetch(url)
         // Exibe os dados formatados como texto
         const tbody = document.querySelector('#tabela tbody');
         const dados = data.standings[0].rows
-        console.log(data)
         dados.forEach(function (brasileirao) {
 
             const tr = document.createElement('tr'); // Cria uma nova linha
@@ -27,31 +26,16 @@ fetch(url)
                 tdPosition.style.backgroundColor = '#4285F4';
                 tdPosition.textContent = brasileirao.position;
             }
-            else {
-                tdPosition.textContent = brasileirao.position;
-            }
-
             if (brasileirao.position >= 5 && brasileirao.position <= 6) {
                 tdPosition.style.backgroundColor = '#FA7B17';
                 tdPosition.textContent = brasileirao.position;
             }
-            else {
-                tdPosition.textContent = brasileirao.position;
-            }
-
             if (brasileirao.position >= 5 && brasileirao.position <= 6) {
                 tdPosition.style.backgroundColor = '#FA7B17';
                 tdPosition.textContent = brasileirao.position;
             }
-            else {
-                tdPosition.textContent = brasileirao.position;
-            }
-
             if (brasileirao.position >= 7 && brasileirao.position <= 12) {
                 tdPosition.style.backgroundColor = '#34A853';
-                tdPosition.textContent = brasileirao.position;
-            }
-            else {
                 tdPosition.textContent = brasileirao.position;
             }
             if (brasileirao.position >= 17 && brasileirao.position <= 20) {
@@ -76,9 +60,29 @@ fetch(url)
             tr.appendChild(tdDraws); // Adiciona a célula à linha
             tr.appendChild(tdLosses); // Adiciona a célula à linha
             tbody.appendChild(tr); // Adiciona a linha ao corpo da tabela
-            console.log(brasileirao)
         });
     })
     .catch(error => {
         document.getElementById('resultado').textContent = `Houve um problema com a requisição: ${error.message}`;
+    });
+
+    //segunda api para pegar os proximos jogos
+
+    fetch("https://api.api-futebol.com.br/v1/times/131/partidas/proximas", {
+        method: "GET",
+        headers: {
+            "Authorization": "Bearer live_aacc79e784dc2a6480560a479a55df"
+        }
+    })
+    .then(response => {
+        if (!response.ok) { 
+            throw new Error(`Erro: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data); // Exibe os dados da resposta
+    })
+    .catch(error => {
+        console.error('Erro:', error); // Trata erros
     });

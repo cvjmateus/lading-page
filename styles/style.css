@@ -6,16 +6,17 @@ html{
 body {
     background: linear-gradient(rgb(16, 16, 16, 0.5), rgb(25, 25, 25, 0.5)), url(../assets/background-image.jpg);
     background-position: center center;
-     background-size: cover;
-     /* background-repeat: no-repeat */
+    background-size: cover;
     background-position-y: 0px;
+    width: 100%;
+    margin: 0;
 }
 .menu-navigation{
     display: flex;
     text-decoration: none;
     justify-content: space-around;
     align-items: center;
-    background-color: #1e3f68;
+    background: linear-gradient(to right, red, blue,red);
     height: 5vw;
 }
 .menu-navigation img{
@@ -46,7 +47,9 @@ body {
     width: 100%;
     background-color: #ff2600;
 }
-
+.main-content p {
+    display: inline;
+}
 
 /* MAIN */
 .main-content{
@@ -118,11 +121,7 @@ tr:hover {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    background: linear-gradient(rgb(16, 16, 16, 0.5), rgb(25, 25, 25, 0.5)), url(../assets/backgroud-footer.jpg);
-    /* background-position: center center; */
-     /* background-size: cover; */
-    background-repeat: repeat;
-    background-position-x: 100%;
+    background: linear-gradient(to right, blue,red);
     margin: 0 auto;
     margin-bottom: 0;
     padding: 20px;
@@ -156,7 +155,7 @@ tr:hover {
 .footer-form button {
     padding: 10px;
     font-size: 1.6rem;
-    background-color: rgb(5, 82, 197);
+    background: linear-gradient(to right, blue,red);
     border: none;
     cursor: pointer;
 }
