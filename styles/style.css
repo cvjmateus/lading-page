@@ -155,7 +155,7 @@ tr:hover {
 .footer-form button {
     padding: 10px;
     font-size: 1.6rem;
-    background: linear-gradient(to right, blue,red);
+    background: linear-gradient(to right, red,blue);
     border: none;
     cursor: pointer;
 }
