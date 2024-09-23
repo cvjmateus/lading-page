@@ -12,7 +12,7 @@ fetch(url)
         const tbody = document.querySelector('#tabela tbody');
         const dados = data.standings[0].rows
         dados.forEach(function (brasileirao) {
-
+            
             const tr = document.createElement('tr'); // Cria uma nova linha
             const tdPosition = document.createElement('td'); // Cria uma nova célula
             const tdTeam = document.createElement('td'); // Cria uma nova célula
