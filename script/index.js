@@ -12,7 +12,7 @@ fetch(url)
         const tbody = document.querySelector('#tabela tbody');
         const dados = data.standings[0].rows
         console.log(data)
-        dados.forEach(function(brasileirao) {
+        dados.forEach(function (brasileirao) {
 
             const tr = document.createElement('tr'); // Cria uma nova linha
             const tdPosition = document.createElement('td'); // Cria uma nova célula
@@ -22,24 +22,43 @@ fetch(url)
             const tdDraws = document.createElement('td'); // Cria uma nova célula
             const tdLosses = document.createElement('td'); // Cria uma nova célula
 
-            // Define a cor de fundo da pocissao caso o time esteja no G4
-            if(brasileirao.position >= 0 && brasileirao.position <= 4)
-            {
-                tdPosition.style.backgroundColor = '#06AA48';
+            // Definindo Cor de fundo de acordo
+            if (brasileirao.position >= 0 && brasileirao.position <= 4) {
+                tdPosition.style.backgroundColor = '#4285F4';
                 tdPosition.textContent = brasileirao.position;
             }
-            else
-            {
+            else {
                 tdPosition.textContent = brasileirao.position;
             }
 
-            if(brasileirao.position >= 5 && brasileirao.position <= 6)
-            {
-                tdPosition.style.backgroundColor = '#1387F7';
+            if (brasileirao.position >= 5 && brasileirao.position <= 6) {
+                tdPosition.style.backgroundColor = '#FA7B17';
                 tdPosition.textContent = brasileirao.position;
             }
-            else
-            {
+            else {
+                tdPosition.textContent = brasileirao.position;
+            }
+
+            if (brasileirao.position >= 5 && brasileirao.position <= 6) {
+                tdPosition.style.backgroundColor = '#FA7B17';
+                tdPosition.textContent = brasileirao.position;
+            }
+            else {
+                tdPosition.textContent = brasileirao.position;
+            }
+
+            if (brasileirao.position >= 7 && brasileirao.position <= 12) {
+                tdPosition.style.backgroundColor = '#34A853';
+                tdPosition.textContent = brasileirao.position;
+            }
+            else {
+                tdPosition.textContent = brasileirao.position;
+            }
+            if (brasileirao.position >= 17 && brasileirao.position <= 20) {
+                tdPosition.style.backgroundColor = '#EA4335';
+                tdPosition.textContent = brasileirao.position;
+            }
+            else {
                 tdPosition.textContent = brasileirao.position;
             }
 
@@ -58,7 +77,7 @@ fetch(url)
             tr.appendChild(tdLosses); // Adiciona a célula à linha
             tbody.appendChild(tr); // Adiciona a linha ao corpo da tabela
             console.log(brasileirao)
-          });
+        });
     })
     .catch(error => {
         document.getElementById('resultado').textContent = `Houve um problema com a requisição: ${error.message}`;

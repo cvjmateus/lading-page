@@ -51,21 +51,34 @@ body {
 /* MAIN */
 .main-content{
     display: flex;
-    width: 110vw;
+    width: 100vw;
+    height: 90vh;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+
 }
 .main-card-tabela{
+    display: flex;
+    flex-direction: column;
     width: 600px;
     height: 600px;
-    border-radius: 10px;
+    border-radius: 20px;
+    position: relative;
+    border: 5px solid #0c49a5;
+    background-color: rgb(231, 227, 227);
+}
+.main-card-tabela-titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.main-content-tabela::-webkit-scrollbar{
+    display: none;
+}
+.main-content-tabela{
     overflow: hidden;
     overflow-y: scroll;
-    position: relative;
-    background-color: rgb(255, 255, 255);
-}
-.main-card-tabela::-webkit-scrollbar{
-    display: none;
 }
 .main-card-tabela h1{
     text-align: center;
@@ -73,7 +86,7 @@ body {
 }
 .main-card-next{
     width: 600px;
-    height: 500px;
+    height: 600px;
     background-color: beige;
 }
 
@@ -100,3 +113,57 @@ tr{
 tr:hover {
     background-color: #f5f5f5;
 }
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: linear-gradient(rgb(16, 16, 16, 0.5), rgb(25, 25, 25, 0.5)), url(../assets/backgroud-footer.jpg);
+    /* background-position: center center; */
+     /* background-size: cover; */
+    background-repeat: repeat;
+    background-position-x: 100%;
+    margin: 0 auto;
+    margin-bottom: 0;
+    padding: 20px;
+}
+
+.footer-form, .footer-contact {
+    flex: 1;
+    margin: 0 100px;
+}
+
+.footer-form h3, .footer-contact h3 {
+    margin-bottom: 10px;
+}
+
+.footer-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-form label {
+    margin-bottom: 5px;
+    color: white;
+}
+
+.footer-form input {
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 1.4rem;
+}
+
+.footer-form button {
+    padding: 10px;
+    font-size: 1.6rem;
+    background-color: rgb(5, 82, 197);
+    border: none;
+    cursor: pointer;
+}
+.footer-contact p {
+    margin-bottom: 10px;
+}
+.footer-contact{
+    color:white
+}
+
