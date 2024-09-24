@@ -81,6 +81,8 @@ fetch(url)
         return response.json();
     })
     .then(data => {
+        const timeCasa = document.getElementsByClassName(".time-casa"); 
+
         console.log(data); // Exibe os dados da resposta
     })
     .catch(error => {

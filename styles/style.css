@@ -3,13 +3,36 @@ html{
     font-family: sans-serif;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: large;
+}
+table img{
+    height: 15%;
+    width: 15%;
+}
+th, td {
+    border: 2px solid #202020;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr{
+    background-color: var(--cor-libertadores);
+}
+tr:hover {
+    background-color: #f5f5f5;
+}
+
 body {
     background: linear-gradient(rgb(16, 16, 16, 0.5), rgb(25, 25, 25, 0.5)), url(../assets/background-image.jpg);
     background-position: center center;
     background-size: cover;
     background-position-y: 0px;
     width: 100%;
-    margin: 0;
 }
 .menu-navigation{
     display: flex;
@@ -51,7 +74,7 @@ body {
     display: inline;
 }
 
-/* MAIN */
+/* Conteudo principal */
 .main-content{
     display: flex;
     width: 100vw;
@@ -68,12 +91,20 @@ body {
     border-radius: 20px;
     position: relative;
     border: 5px solid #0c49a5;
+    background-color: rgb(245, 245, 245);
+}
+.main-card-proximos-jogos{
+    width: 600px;
+    height: 600px;
+    border-radius: 20px;
+    position: relative;
+    border: 5px solid #0c49a5;
     background-color: rgb(231, 227, 227);
 }
 .main-card-tabela-titulo{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     padding: 10px;
 }
 .main-content-tabela::-webkit-scrollbar{
@@ -85,37 +116,34 @@ body {
 }
 .main-card-tabela h1{
     text-align: center;
-    margin-bottom: 15px;
 }
-.main-card-next{
+.main-card-nextgames{
     width: 600px;
     height: 600px;
     background-color: beige;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: large;
+.main-card-nextgames-titulo{
+    display: flex;
+    background-color: #fafafa;
+    align-items: center;
 }
-table img{
-    height: 15%;
-    width: 15%;
+
+.main-card-nextgames-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
 }
-th, td {
-    border: 2px solid #202020;
-    padding: 8px;
-    text-align: center;
+.main-card-nextgames-times{
+    display: flex;
+    flex-direction: column;
 }
-th {
-    background-color: #f2f2f2;
+.main-card-nextgames-data{
+    display: flex;
+    flex-direction: column;
 }
-tr{
-    background-color: var(--cor-libertadores);
-}
-tr:hover {
-    background-color: #f5f5f5;
-}
+
+/* Footer */
 
 .footer-container {
     display: flex;
@@ -156,6 +184,7 @@ tr:hover {
     padding: 10px;
     font-size: 1.6rem;
     background: linear-gradient(to right, red,blue);
+    color: white;
     border: none;
     cursor: pointer;
 }
