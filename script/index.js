@@ -68,10 +68,10 @@ fetch(url)
 
     //segunda api para pegar os proximos jogos
 
-    fetch("https://api.api-futebol.com.br/v1/times/131/partidas/proximas", {
+    fetch("https://api.api-futebol.com.br/v1/campeonatos/10", {
         method: "GET",
         headers: {
-            "Authorization": "Bearer live_aacc79e784dc2a6480560a479a55df"
+            "Authorization": "Bearer test_f456f439fd6aec1b065d7577702f54"
         }
     })
     .then(response => {
@@ -81,10 +81,10 @@ fetch(url)
         return response.json();
     })
     .then(data => {
-        const timeCasa = document.getElementsByClassName(".time-casa"); 
-
         console.log(data); // Exibe os dados da resposta
     })
     .catch(error => {
         console.error('Erro:', error); // Trata erros
     });
+
+    

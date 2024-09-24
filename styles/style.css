@@ -195,8 +195,19 @@ body {
     color:white
 }
 
-.meme img {
+.footer-autor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-autor h1{
+    color: white;
+}
+
+.footer-autor img {
     width: 25%;
     height: 25%;
+    padding: 10px;
 }
 
